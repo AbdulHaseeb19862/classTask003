@@ -1,0 +1,32 @@
+*{
+  padding: 0px;
+  margin: 0px;
+}
+
+.container{
+  margin: auto;
+  margin-top: 80px;
+}
+
+div{
+  
+  width: 50vw;
+  height: 60vh;
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  gap: 20px;
+}
+
+h1{
+  color: white;
+  font-size: 50px;
+}
+
+#question{
+  color: red;
+  font-weight: bolder;
+}
