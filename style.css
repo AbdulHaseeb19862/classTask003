@@ -1,9 +1,11 @@
 *{
   padding: 0px;
   margin: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
-.container{
+/* .container{
   margin: auto;
   margin-top: 80px;
 }
@@ -29,4 +31,65 @@ h1{
 #question{
   color: red;
   font-weight: bolder;
+} */
+
+body{
+  background-color: rgb(35, 36, 106);
+}
+
+
+.app{
+  width: 90%;
+  max-width: 600px;
+  background-color: white;
+  padding: 30px;
+  margin: 100px auto 0px;
+}
+
+.app h1 {
+  font-size: 20px;
+  font-weight: bolder;
+  border-bottom: 1px solid black;
+  padding: 10px;
+  color: #222;
+  
+}
+
+h2{
+  font-size: 16px;
+  font-weight: bolder;
+  margin-top: 5px;
+  padding: 10px;
+  color: #222;
+}
+
+.btn{
+  width: 100%;
+  text-align: left;
+  padding: 15px;
+  background-color: white;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: #222;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover{
+  background: #222;
+  color: white;
+}
+
+#next {
+  margin: auto;
+  display: none;
+  background: #001e4d;
+  color: white;
+  padding: 10px;
+  width: 150px;
+  border: 1px solid black;
+  border-radius: 5px;
+
+
 }
