@@ -1,49 +1,4 @@
-// const questions = [
-//   {
-//     quest: "What is 2 +2 ?",
-//     choices: [1, 2, 3, 4],
-//     answerIndex: 3,
-//   },
 
-//   {
-//     quest: "What is 0 +2 ?",
-//     choices: [1, 2, 3, 4],
-//     answerIndex: 1,
-//   },
-// ];
-// var currentIndex = 0;
-
-// function showQuestion() {
-//   var questionEl = document.getElementById("question");
-//   questionEl.textContent = questions[currentIndex].quest;
-//   document.getElementById("choice1").textContent =
-//     questions[currentIndex].choices[0];
-//   document.getElementById("choice2").textContent =
-//     questions[currentIndex].choices[1];
-//   document.getElementById("choice3").textContent =
-//     questions[currentIndex].choices[2];
-//   document.getElementById("choice4").textContent =
-//     questions[currentIndex].choices[3];
-// }
-
-// function nextQuestion() {
-//   currentIndex++;
-//   showQuestion();
-// }
-
-// function checkAnswer(selectedOptionIndex) {
-//   if (selectedOptionIndex === questions[currentIndex].answerIndex) {
-//     alert("You got it right.");
-//     // nextQuestion();
-//     showQuestion();
-//   } else {
-//     alert("Wrong! try next time.");
-//     // nextQuestion();
-//     showQuestion();
-//   }
-// }
-
-// showQuestion();
 
 const questions = [
   {
@@ -59,7 +14,7 @@ const questions = [
     question: "Which is the largest desert in the world?",
     answers: [
       { text: "Kalahari", correct: false },
-      { text: "Gobi", correct: true },
+      { text: "Gobi", correct: false },
       { text: "Sahara", correct: false },
       { text: "Antarctica", correct: true },
     ],
@@ -71,7 +26,7 @@ const questions = [
       { text: "Asia", correct: false },
       { text: "Australia", correct: true },
       { text: "Arctic", correct: false },
-      { text: "Africa", correct: true },
+      { text: "Africa", correct: false },
     ],
   },
 ];
@@ -120,6 +75,7 @@ function selectAnswer(e) {
   const correctAnswer = selectedButton.dataset.correct === "true";
   if (correctAnswer) {
     selectedButton.classList.add("correct");
+    score++;
   } else {
     selectedButton.classList.add("incorrect");
   }
@@ -132,5 +88,33 @@ function selectAnswer(e) {
   });
   nextButton.style.display = "block";
 }
+
+function showScore() {
+  resetState();
+  questionElement.innerHTML =
+    "Quiz Complete! Your Score is: " +
+    score +
+    " and out of " +
+    questions.length;
+  nextButton.innerHTML = "Restart";
+  nextButton.style.display = "block";
+}
+
+function handleNextButton() {
+  currentQuestionIndex++;
+  if (currentQuestionIndex < questions.length) {
+    showQuestion();
+  } else {
+    showScore();
+  }
+}
+
+nextButton.addEventListener("click", () => {
+  if (currentQuestionIndex < questions.length) {
+    handleNextButton();
+  } else {
+    startQuiz();
+  }
+});
 
 startQuiz();
