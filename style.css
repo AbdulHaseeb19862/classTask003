@@ -76,9 +76,13 @@ h2{
   cursor: pointer;
 }
 
-.btn:hover{
+.btn:hover:not([disabled]){
   background: #222;
   color: white;
+}
+
+.btn:disabled{
+  cursor: no-drop;
 }
 
 #next {
@@ -92,4 +96,11 @@ h2{
   border-radius: 5px;
 
 
+}
+
+.correct{
+  background-color: rgb(103, 194, 103);
+}
+.incorrect{
+  background-color: rgb(219, 83, 83);
 }
